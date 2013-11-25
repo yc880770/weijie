@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TabHost
+        android:id="@+id/tabs"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            >
+            <LinearLayout
+                android:id="@+id/tab_index"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:background="#ffffff"
+                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    >
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="广告"/>
+                </LinearLayout>
+                <TableLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+
+                    >
+                    <TableRow
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        >
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:padding="3dip"
+                            android:background="@drawable/ic_launcher"/>
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:padding="3dip"
+                            android:background="@drawable/ic_launcher"/>
+                    </TableRow>
+                    <TableRow></TableRow>
+                    <TableRow
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        >
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:padding="3dip"
+                            android:background="@drawable/ic_launcher"/>
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:padding="3dip"
+                            android:background="@drawable/ic_launcher"/>
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/tab_collect"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="店铺收藏"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/tab_cloud"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="我的云"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/tab_shopping"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_height="150dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/ic_launcher"
+                    />
+                <com.jdy.weijie.common.PullToRefreshListView
+                    android:background="#fff000"
+                    android:id="@+id/main_shopping_listView"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent">
+
+
+                </com.jdy.weijie.common.PullToRefreshListView>
+
+
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="订单"/>
+            </LinearLayout>
+        </FrameLayout>
+        <TabWidget
+            android:layout_gravity="bottom"
+            android:id="@android:id/tabs"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+        </TabWidget>
+
+    </TabHost>
+</LinearLayout>
