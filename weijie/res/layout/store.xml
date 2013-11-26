@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffffff">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            >
+        <ImageView
+                android:id="@+id/store_advertisement_imageView"
+                android:layout_height="44dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/ic_launcher"
+                />
+
+        <Button
+                android:text="搜索"
+                android:id="@+id/restaurant_search_textView"
+                android:layout_height="20dp"
+                android:layout_width="280dp"
+                android:layout_alignBottom="@id/store_advertisement_imageView"
+                >
+        </Button>
+        <Button
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:id="@+id/restaurant_codeSearch_buttonView"
+                android:layout_toRightOf="@id/restaurant_search_textView"
+                android:layout_alignBottom="@id/store_advertisement_imageView"
+                >
+        </Button>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="#000000"
+            >
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+                android:id="@+id/store_listView"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                >
+        </com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+        <Button
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_alignLeft="@id/store_listView"
+                >
+        </Button>
+        <Button
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_alignRight="@id/store_listView">
+        </Button>
+    </RelativeLayout>
+</LinearLayout>

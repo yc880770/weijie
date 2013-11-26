@@ -16,6 +16,7 @@ public class Order {
     public  static final  int  ORDER_STATUS_DEFAULT=0;
     private String commodityName;
     private String storeName;
+    private String orderId;
     private int commodityNum;
     private Drawable commodityImageUrl;
     private String commodityItem1;
@@ -25,6 +26,33 @@ public class Order {
     private Date createTime;
     private int orderStatus;
 
+
+    public Order() {
+    }
+
+    public Order(String orderId, String storeName, String commodityName, int commodityNum,Drawable commodityImageUrl, String commodityItem1, String commodityItem2, String commodityRemark, float money, Date createTime, int orderStatus
+                ) {
+        this.orderId = orderId;
+        this.storeName = storeName;
+        this.commodityName = commodityName;
+        this.commodityNum = commodityNum;
+        this.commodityImageUrl = commodityImageUrl;
+        this.commodityItem1 = commodityItem1;
+        this.commodityItem2 = commodityItem2;
+        this.commodityRemark = commodityRemark;
+        this.money = money;
+        this.createTime = createTime;
+        this.orderStatus = orderStatus;
+    }
+
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
 
     public String getCommodityName() {
         return commodityName;

@@ -1,19 +1,25 @@
 package com.jdy.weijie.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.Toast;
 
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.jdy.weijie.R;
 import com.jdy.weijie.adapter.OrderAdapter;
+import com.jdy.weijie.adapter.StoreAdapter;
+import com.jdy.weijie.common.L;
 import com.jdy.weijie.model.location.Location;
 import com.jdy.weijie.model.location.LocationManager;
 import com.jdy.weijie.model.shopping.Order;
+import com.jdy.weijie.model.store.Store;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +32,7 @@ import java.util.List;
 public class MainActivity extends Activity{
     private String TAG = "tabHost";
     private TabHost tabHost;
-    private ListView shoppingListView;
+    private PullToRefreshListView shoppingListView;
 
 //    主页
     private static final String INDEX = "index";
@@ -38,18 +44,45 @@ public class MainActivity extends Activity{
     private static final String SHOPPING = "shopping";
 
 
+
+//    送餐
+    private static final String RESTAURANT = "restaurant";
+    private View  restaurantButton;
+
+//    便利店
+    private static final String STORE = "store";
+    private View  storeButton;
+
+//    家政
+    private static final String HOMEMAKING = "homemaking";
+    private View  homemakingButton;
+//
+//    private static final String SHOPPING = "shopping";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
         tabHost = (TabHost) findViewById(R.id.tabs);
-        shoppingListView = (ListView) findViewById(R.id.main_shopping_listView);
-
-
+        shoppingListView = (PullToRefreshListView) findViewById(R.id.main_shopping_listView);
+//        restaurantButton =  findViewById(R.id.main_restaurant_button);
+//        storeButton = findViewById(R.id.main_dimeStore_button);
+//        homemakingButton =  findViewById(R.id.main_homemaking_button);
+//        shoppingListView.setPullToRefreshOverScrollEnabled(true);
         tabHost.setup();
         tabHost.setOnTabChangedListener(onTabChangeListener);
         init();
+
+
+
+
+    }
+
+    public void onButtonClick(View view) {
+        Intent intent = new Intent(this,StoreActivity.class);
+        startActivity(intent);
     }
 
     private void init() {
@@ -135,6 +168,16 @@ public class MainActivity extends Activity{
             list.add(order);
         }
         shoppingListView.setAdapter(new OrderAdapter(this,list,R.layout.order_item));
+//         List<Store>  list = new ArrayList<Store>();
+//
+//        for (int i=0; i < 5; i++)
+//        {
+//            Store order = new Store(i,"肯德基太白南路店",getResources().getDrawable(R.drawable.ic_launcher),"便利店",200,0.4 , 38);
+////            L.d(order.toString());
+//            list.add(order);
+//        }
+
+//        shoppingListView.setAdapter(new StoreAdapter(this,list,R.layout.store_odd_item,R.layout.store_even_item));
 
     }
 

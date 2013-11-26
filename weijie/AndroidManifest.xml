@@ -13,6 +13,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.StoreActivity"></activity>
 
         <service android:name="com.baidu.location.f" android:enabled="true"
                  android:process=":remote">
